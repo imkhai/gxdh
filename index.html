@@ -108,7 +108,7 @@
                         <i class="bi bi-calendar-event"></i>
                     </div>
                     <h3>Ngày Thành Lập</h3>
-                    <p>12.7.1955 - Cha Đa Minh Trần Quang Huy cùng 40 xe đồng bào di cư từ miền Bắc đến vùng đất Cống Đôi lập nghiệp và thành lập Họ Đạo.</p>
+                    <p>Ngày 12.7.1955 - Cha Đa Minh Trần Quang Huy cùng 40 xe đồng bào di cư từ miền Bắc đến vùng đất Cống Đôi lập nghiệp và thành lập Họ Đạo.</p>
                 </div>
                 <div class="about-card">
                     <div class="about-icon">
@@ -139,7 +139,7 @@
                 <div class="priest-card">
                     <div class="priest-years">1955 - 1960</div>
                     <h3>Cha Đa Minh Trần Quang Huy</h3>
-                    <p>Cha sáng lập Giáo Xứ Đại Hải. Ngài đã xây dựng nhà thờ đầu tiên và quy tụ giáo dân từ miền Bắc. Ngài được Chúa gọi về ngày 11.3.1960.</p>
+                    <p>Cha sáng lập Giáo Xứ Đại Hải. Ngài đã xây dựng nhà thờ đầu tiên và quy tụ giáo dân từ miền Bắc. Ngài được Chúa gọi về Ngày 11.3.1960.</p>
                 </div>
                 <div class="priest-card">
                     <div class="priest-years">1961 - 1974</div>
@@ -159,7 +159,7 @@
                 <div class="priest-card">
                     <div class="priest-years">2002 - 2018</div>
                     <h3>Cha Phaolô Võ Văn Nam</h3>
-                    <p>Ngài đã xây dựng lại ngôi nhà thờ Đại Hải mới khang trang. Ngài được Chúa gọi về ngày 18.3.2023.</p>
+                    <p>Ngài đã xây dựng lại ngôi nhà thờ Đại Hải mới khang trang. Ngài được Chúa gọi về Ngày 18.3.2023.</p>
                 </div>
                 <div class="priest-card current">
                     <div class="priest-years">2018 - Nay</div>
@@ -209,6 +209,16 @@
                     <h3>Chầu Thánh Thể</h3>
                     <p class="time">Thứ Năm Đầu Tháng</p>
                     <p>Giờ chầu Thánh Thể, suy niệm và cầu nguyện trước Chúa Giêsu Thánh Thể.</p>
+                </div>
+            </div>
+
+            <!-- Important Feast Days -->
+            <div class="feast-days-section">
+                <div class="feast-days-header">
+                    <h3>Các Ngày Lễ Trọng Trong Năm</h3>
+                </div>
+                <div id="feast-days-list" class="feast-days-list">
+                    <p class="loading-text">Đang tải dữ liệu...</p>
                 </div>
             </div>
         </div>
@@ -337,7 +347,6 @@
                     </div>
                 </div>
             </div>
-            <p class="gallery-note">Thêm hình ảnh của giáo xứ vào thư mục images</p>
         </div>
     </section>
 
@@ -501,6 +510,53 @@
                 navbar.classList.remove('scrolled');
             }
         });
+
+        // Feast days data
+        const feastDays = [
+            { date: '24/12', title: 'Thánh Lễ Vọng Giáng Sinh', description: 'Đêm Diễn Nguyện Giáng Sinh và Thánh Lễ Đêm Mừng Chúa Giáng Sinh' },
+            { date: '25/12', title: 'Thánh Lễ Giáng Sinh', description: 'Thánh Lễ Trọng Mừng Chúa Giáng Sinh' },
+            { date: '01/01', title: 'Lễ Đức Mẹ Maria Mẹ Thiên Chúa', description: 'Thánh Lễ Trọng Mừng Đức Mẹ Maria Mẹ Thiên Chúa' },
+            { date: '06/01', title: 'Lễ Hiển Linh', description: 'Mừng Chúa Giêsu Hiển Linh Cho Muôn Dân' },
+            { date: '14/02', title: 'Tro', description: 'Ngày Tro - Bắt Đầu Mùa Chay' },
+            { date: '19/03', title: 'Lễ Thánh Giuse', description: 'Mừng Bổn Mạng Thánh Giuse Bạn Trăm Năm Đức Maria' },
+            { date: '25/03', title: 'Lễ Truyền Tin', description: 'Mừng Đức Mẹ Nhận Lời Thiên Thần Truyền Tin' },
+            { date: '01/04', title: 'Chúa Nhật Lá', description: 'Tuần Thánh - Chúa Nhật Lễ Lá' },
+            { date: '06/04', title: 'Thứ Sáu Tuần Thánh', description: 'Tưởng Niệm Cuộc Thương Khó Của Chúa Giêsu' },
+            { date: '08/04', title: 'Chủ Nhật Phục Sinh', description: 'Thánh Lễ Vọng Phục Sinh và Thánh Lễ Chúa Phục Sinh' },
+            { date: '17/05', title: 'Lễ Chúa Thăng Thiên', description: 'Mừng Chúa Giêsu Lên Trời' },
+            { date: '27/05', title: 'Lễ Chúa Thánh Thần Hiện Xuống', description: 'Mừng Chúa Thánh Thần Hiện Xuống Cùng Các Tông Đồ' },
+            { date: '07/10', title: 'Đức Mẹ Mân Côi', description: 'Mừng Bổn Mạng Giáo Xứ - Đức Mẹ Mân Côi' },
+            { date: '01/11', title: 'Lễ Các Thánh Nam Nữ', description: 'Mừng Lễ Các Thánh Nam Nữ' },
+            { date: '02/11', title: 'Lễ Các Đẳng Linh Hồn', description: 'Cầu Cho Các Linh Hồn Tín Hữu Qua Đời' },
+            { date: '08/12', title: 'Lễ Đức Mẹ Vô Nhiễm Nguyên Tội', description: 'Mừng Đức Mẹ Vô Nhiễm Nguyên Tội' }
+        ];
+
+        // Load feast days
+        function loadFeastDays() {
+            const feastDaysContainer = document.getElementById('feast-days-list');
+            feastDaysContainer.innerHTML = '';
+
+            feastDays.forEach(feast => {
+                const feastCard = document.createElement('div');
+                feastCard.className = 'feast-day-card';
+
+                feastCard.innerHTML = `
+                    <div class="feast-date">
+                        <i class="bi bi-calendar-heart"></i>
+                        <span>${feast.date}</span>
+                    </div>
+                    <div class="feast-content">
+                        <h4>${feast.title}</h4>
+                        <p>${feast.description}</p>
+                    </div>
+                `;
+
+                feastDaysContainer.appendChild(feastCard);
+            });
+        }
+
+        // Load feast days when page loads
+        window.addEventListener('DOMContentLoaded', loadFeastDays);
     </script>
 </body>
 </html>
