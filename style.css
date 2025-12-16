@@ -579,22 +579,22 @@ a {
 }
 
 .feast-days-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    max-width: 1000px !important;
+    margin: 0 auto !important;
 }
 
 .feast-day-card {
-    background: var(--white);
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    gap: 15px;
-    align-items: flex-start;
+    background: var(--white) !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+    display: flex !important;
+    gap: 15px !important;
+    align-items: flex-start !important;
     transition: var(--transition);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-sm) !important;
 }
 
 .feast-day-card:hover {
